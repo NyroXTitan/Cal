@@ -1,0 +1,43 @@
+<div class="calculator">
+  <div class="theme">
+    <span>calc</span>
+    <span>THEME</span>
+    <div>
+      <input type="radio" id="theme1" name="theme" value="1" checked />
+      <label for="theme1">1</label>
+      <input type="radio" id="theme2" name="theme" value="2" />
+      <label for="theme2">2</label>
+      <input type="radio" id="theme3" name="theme" value="3" />
+      <label for="theme3">3</label>
+    </div>
+  </div>
+
+  <div class="display">
+    <input type="text" [value]="displayValue"  />
+  </div>
+
+  <div class="buttons">
+    <button (click)="onButtonClick('7')">7</button>
+    <button (click)="onButtonClick('8')">8</button>
+    <button (click)="onButtonClick('9')">9</button>
+    <button class="del" (click)="onDelete()">DEL</button>
+
+    <button (click)="onButtonClick('4')">4</button>
+    <button (click)="onButtonClick('5')">5</button>
+    <button (click)="onButtonClick('6')">6</button>
+    <button (click)="onButtonClick('+')">+</button>
+
+    <button (click)="onButtonClick('1')">1</button>
+    <button (click)="onButtonClick('2')">2</button>
+    <button (click)="onButtonClick('3')">3</button>
+    <button (click)="onButtonClick('-')">-</button>
+
+    <button (click)="onButtonClick('.')">.</button>
+    <button (click)="onButtonClick('0')">0</button>
+    <button (click)="onButtonClick('/')">/</button>
+    <button (click)="onButtonClick('*')">x</button>
+
+    <button class="reset" (click)="onReset()">RESET</button>
+    <button class="equal" (click)="onCalculate()">=</button>
+  </div>
+</div>
