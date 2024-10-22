@@ -25,7 +25,7 @@ import { CalculationService } from './calculation.service';
   }
 
   onDelete() {
-    // Remove the last character
+    
     this.displayValue = this.displayValue.slice(0, -1);
 
     this.formatExpression();
