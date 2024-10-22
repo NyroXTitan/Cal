@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: true,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [DecimalPipe]  
 })
 export class AppComponent {
   displayValue: string = '';
+
+  constructor(private decimalPipe: DecimalPipe) {}  
 
   onButtonClick(value: string) {
     this.displayValue += value;
@@ -23,7 +27,8 @@ export class AppComponent {
 
   onCalculate() {
     try {
-      this.displayValue = eval(this.displayValue);
+      const result = eval(this.displayValue); 
+      this.displayValue = this.decimalPipe.transform(result, '1.0-0') || '';
     } catch (error) {
       this.displayValue = 'Error';
     }
